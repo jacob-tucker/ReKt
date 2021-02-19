@@ -1,0 +1,91 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 8vh;
+    height: 75px;
+    z-index: 10;
+    width: 100%;
+
+    .navbar_leftside {
+        color: white;
+        letter-spacing: 5px;
+        font-size: 20px;
+        align-items: center;
+        display: flex;
+        margin-left: 7.5%;
+        img {
+            width: 50px;
+            height: 50px;
+        }
+        h1 {
+            margin-left: 10px;
+            width: 100px;
+        }
+        input {
+            margin-left: 10px;
+            width: 300px;
+            height: 40px;
+            border: .5px solid rgb(79, 77, 77);
+            border-radius: 5px;
+            background: rgb(34, 34, 34);
+            outline: 0;
+            color: white;
+            font-size: 10px;
+            font-family: sans-serif;
+            padding: 10px;
+            &:focus {
+                border-color: #E30004;
+            }
+        }
+    }
+
+    .navbar_rightside {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-right: 5%;
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-family: sans-serif;
+            margin: 0px 10px;
+            a {
+                color: white;
+                font-weight: bold;
+                line-height: 24px;
+                text-decoration: none;
+                font-size: 16px;
+                margin: 0px 10px;
+                &:hover {
+                    color: #E30004;
+                }
+            }
+
+            small {
+                color: white;
+                border: .5px solid #E30004;
+                padding: 5px;
+            }
+        }
+        @media all and (max-width: 1400px) {
+            display: none;
+        }
+    }
+}
+
+.background {
+    animation: addBackground 2s forwards;
+}
+
+@keyframes addBackground {
+    100% {
+        background-color: #121618;
+    }
+}

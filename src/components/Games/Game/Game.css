@@ -1,0 +1,121 @@
+.game .game_description {
+  position: absolute;
+  top: 100px;
+  left: 20%;
+  height: 220px;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media all and (max-width: 1400px) {
+  .game .game_description {
+    left: 15%;
+  }
+}
+
+@media all and (max-width: 1300px) {
+  .game .game_description {
+    left: 10%;
+  }
+}
+
+@media all and (max-width: 1200px) {
+  .game .game_description {
+    left: 5%;
+  }
+}
+
+@media all and (max-width: 1150px) {
+  .game .game_description {
+    width: 552px;
+    height: 311px;
+  }
+}
+
+@media all and (max-width: 1000px) {
+  .game .game_description {
+    position: relative;
+    width: 600px;
+  }
+}
+
+@media all and (max-width: 700px) {
+  .game .game_description {
+    width: 90vw;
+    height: 500px;
+  }
+}
+
+.game .game_description img {
+  width: 160px;
+  height: 213px;
+  border-radius: 5px;
+}
+
+.game .game_description .game_description_left {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100px;
+  margin-left: 5%;
+}
+
+.game .game_description .game_description_left h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+.game .game_description .game_description_left p {
+  color: lightgrey;
+}
+
+.game .game_description .game_description_right {
+  position: absolute;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 5px;
+  left: 50%;
+  width: 450px;
+}
+
+.game .game_description .game_description_right p {
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+
+@media all and (max-width: 1000px) {
+  .game .game_description .game_description_right {
+    display: none;
+  }
+}
+
+.game .gamepage_list {
+  position: absolute;
+  top: 175px;
+  left: 0;
+  width: 100%;
+}
+
+.game .gamepage_list .upload_video {
+  top: 350px;
+}
+
+@media all and (max-width: 1000px) {
+  .game .gamepage_list .upload_video {
+    display: none;
+  }
+}
+/*# sourceMappingURL=Game.css.map */

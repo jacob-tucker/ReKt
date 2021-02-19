@@ -1,0 +1,145 @@
+.games {
+    position: absolute;
+    top: 75px;
+    left: 0;
+    width: 100%;
+
+    @media all and (max-width: 1000px) {
+        top: 200px;
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .games_list {
+        position: absolute;
+        top: 100px;
+        left: 18%;
+        width: 720px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-flow: row wrap;
+
+        .game_element {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+
+            img {
+                width: 160px;
+                height: 200px;
+                object-fit: cover;
+                border-radius: 5px;
+                margin-bottom: 5px;
+            }
+
+            p:nth-child(2) {
+                font-size: 14px;
+                line-height: 20px;
+                text-align: left;
+                white-space: nowrap;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                color: rgb(255, 255, 255);
+                font-weight: 500;
+            }
+            p:nth-child(3) {
+                font-size: 10px;
+                color: lightgrey;
+                margin-bottom: 5px;
+            }
+
+            a {
+                width: 84px;
+                height: 32px;
+                color: white;
+                background: #e43f3f;
+                padding: 8px 16px;
+                border: none;
+                outline: 0;
+                border-radius: 2px;
+                text-align: center;
+                font-size: 13px;
+                display: flex; // the flex centers the text in the button
+                justify-content: center; //
+                align-items: center; //
+                text-decoration: none;
+                font-family: sans-serif;
+                font-weight: 500;
+                
+            }
+        }
+
+        @media all and (max-width: 1400px) {
+            left: 13%;
+        }
+        @media all and (max-width: 1300px) {
+            left: 8%;
+        }
+        @media all and (max-width: 1200px) {
+            left: 3%;
+        }
+        @media all and (max-width: 1150px) {
+            width: 552px;
+            height: 311px;
+        }
+        @media all and (max-width: 1000px) {
+            position: relative;
+            top: 0;
+            left: 0;
+            width: 600px;
+        }
+        @media all and (max-width: 700px) {
+            width: 90vw;
+            height: 500px;
+        }
+        
+    }
+
+    .popular_games {
+        border-radius: 5px;
+        position: fixed;
+        top: 175px;
+        left: calc(20% + 700px);
+        width: 370px;
+        height: 412px;
+        background-color: #363d3f;
+    
+        h5 {
+            position: relative;
+            top: 2%;
+            text-align: center;
+            color: white;
+            width: 100%;
+            padding: 10px 0px;
+            border-bottom: 1px solid lightgrey;
+        }
+
+        @media all and (max-width: 1400px) {
+            left: calc(15% + 700px);
+        }
+        @media all and (max-width: 1300px) {
+            left: calc(10% + 700px);
+        }
+        @media all and (max-width: 1200px) {
+            left: calc(5% + 700px);
+        }
+        @media all and (max-width: 1150px) {
+            width: 322px;
+            height: 392px;
+            left: calc(5% + 600px);
+        }
+        @media all and (max-width: 1000px) {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+        @media all and (max-width: 500px) {
+            display: none;
+        }
+    }
+}

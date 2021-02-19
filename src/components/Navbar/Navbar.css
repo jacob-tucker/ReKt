@@ -1,0 +1,130 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-height: 8vh;
+  height: 75px;
+  z-index: 10;
+  width: 100%;
+}
+
+.navbar .navbar_leftside {
+  color: white;
+  letter-spacing: 5px;
+  font-size: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 7.5%;
+}
+
+.navbar .navbar_leftside img {
+  width: 50px;
+  height: 50px;
+}
+
+.navbar .navbar_leftside h1 {
+  margin-left: 10px;
+  width: 100px;
+}
+
+.navbar .navbar_leftside input {
+  margin-left: 10px;
+  width: 300px;
+  height: 40px;
+  border: 0.5px solid #4f4d4d;
+  border-radius: 5px;
+  background: #222222;
+  outline: 0;
+  color: white;
+  font-size: 10px;
+  font-family: sans-serif;
+  padding: 10px;
+}
+
+.navbar .navbar_leftside input:focus {
+  border-color: #E30004;
+}
+
+.navbar .navbar_rightside {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-right: 5%;
+}
+
+.navbar .navbar_rightside li {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  font-family: sans-serif;
+  margin: 0px 10px;
+}
+
+.navbar .navbar_rightside li a {
+  color: white;
+  font-weight: bold;
+  line-height: 24px;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 0px 10px;
+}
+
+.navbar .navbar_rightside li a:hover {
+  color: #E30004;
+}
+
+.navbar .navbar_rightside li small {
+  color: white;
+  border: .5px solid #E30004;
+  padding: 5px;
+}
+
+@media all and (max-width: 1400px) {
+  .navbar .navbar_rightside {
+    display: none;
+  }
+}
+
+.background {
+  -webkit-animation: addBackground 2s forwards;
+          animation: addBackground 2s forwards;
+}
+
+@-webkit-keyframes addBackground {
+  100% {
+    background-color: #121618;
+  }
+}
+
+@keyframes addBackground {
+  100% {
+    background-color: #121618;
+  }
+}
+/*# sourceMappingURL=Navbar.css.map */
