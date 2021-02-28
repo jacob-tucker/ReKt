@@ -49,4 +49,14 @@ body::-webkit-scrollbar-thumb {
   -webkit-transform: scale(3);
           transform: scale(3);
 }
+
+#loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  color: white;
+  font-size: 50px;
+  font-family: sans-serif;
+}
 /*# sourceMappingURL=App.css.map */

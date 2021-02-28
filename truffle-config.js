@@ -1,8 +1,6 @@
 require('dotenv').config();
 const HDWalletProvider = require('truffle-hdwallet-provider');
 
-const mneumotic = 'refuse antique you leader night reject fatigue kind pottery spin drip more';
-
 module.exports = {
   networks: {
     development: {

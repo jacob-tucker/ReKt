@@ -17,6 +17,15 @@
   width: 100%;
 }
 
+@media all and (max-width: 890px) {
+  .navbar {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 175px;
+  }
+}
+
 .navbar .navbar_leftside {
   color: white;
   letter-spacing: 5px;
@@ -28,6 +37,18 @@
   display: -ms-flexbox;
   display: flex;
   margin-left: 7.5%;
+}
+
+.navbar .navbar_leftside .flexIt {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media all and (max-width: 890px) {
+  .navbar .navbar_leftside .flexIt {
+    margin-bottom: 10px;
+  }
 }
 
 .navbar .navbar_leftside img {
@@ -58,6 +79,22 @@
   border-color: #E30004;
 }
 
+@media all and (max-width: 890px) {
+  .navbar .navbar_leftside input {
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (max-width: 890px) {
+  .navbar .navbar_leftside {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 0%;
+  }
+}
+
 .navbar .navbar_rightside {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -68,6 +105,12 @@
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-right: 5%;
+}
+
+@media all and (max-width: 1275px) {
+  .navbar .navbar_rightside #accountAddress {
+    display: none;
+  }
 }
 
 .navbar .navbar_rightside li {
@@ -105,15 +148,9 @@
   padding: 5px;
 }
 
-@media all and (max-width: 1400px) {
-  .navbar .navbar_rightside {
-    display: none;
-  }
-}
-
 .background {
-  -webkit-animation: addBackground 2s forwards;
-          animation: addBackground 2s forwards;
+  -webkit-animation: addBackground 1s forwards;
+          animation: addBackground 1s forwards;
 }
 
 @-webkit-keyframes addBackground {

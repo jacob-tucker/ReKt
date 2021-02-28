@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Main.css'
-
 import Moment from './Moment/Moment'
+
+import { connect } from "react-redux";
+
+const classNames = require('classnames')
 
 const Main = (props) => {
   const [videoTitle, setVideoTitle] = useState('')
   const [gameCategory, setGameCategory] = useState('')
-  const [videoName, setVideoName] = useState('')
+  const [videoName, setVideoName] = useState(false)
 
   const callCaptureFile = (event) => {
     setVideoName(event.target.files[0].name)
@@ -17,9 +20,11 @@ const Main = (props) => {
     <div className="main">
       <div className="main_video_list">
         {props.videos.map((video, key) => {
-          return (
-            <Moment key={key} video={video} />
-          )
+          if (video.title === props.searchVal || props.searchVal === '') {
+            return (
+              <Moment key={key} video={video} />
+            )
+          }
         })}
       </div>
 
@@ -33,7 +38,8 @@ const Main = (props) => {
           <div className="middleSection">
             <div className="step">
               <p>1) </p>
-              <label htmlFor="upload_button" className="upload_button_label">Select File</label>
+              <label htmlFor="upload_button" className={classNames({ "upload_button_label": true, 'displayThis': !videoName })}>Select File</label>
+              <label htmlFor="upload_button" className={classNames({ "upload_button_label": true, 'displayThis': videoName })}>Video Selected</label>
               <input id="upload_button" type='file' accept=".mp4, .mkv .ogg .wmv" onChange={callCaptureFile} />
             </div>
             <div className="step">
@@ -65,4 +71,8 @@ const Main = (props) => {
 
 }
 
-export default Main;
+const mapStateToProps = state => {
+  return { searchVal: state.searching.searchVal };
+};
+
+export default connect(mapStateToProps)(Main);
