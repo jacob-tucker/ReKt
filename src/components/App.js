@@ -118,7 +118,7 @@ const App = () => {
   return (
     <Router history={appHistory}>
       <Navbar account={account} />
-      <img id="background-image" src="https://cdn.medal.tv/assets/img/desktop-background.png" />
+      <img id="background-image" src="https://cdn.medal.tv/assets/img/desktop-background.png" alt="background" />
       { loading
         ? <div id="loader"><p>Loading...</p></div>
         :

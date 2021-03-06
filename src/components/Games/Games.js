@@ -12,7 +12,7 @@ import apexImage from './apex_wallpaper.jpg';
 
 const Games = (props) => {
     const [numMoments, setNumMoments] = useState(null)
-    const [populars, setPopulars] = useState([])
+
     useEffect(() => {
         if (props.contract) retrieveNumbers();
     }, [props])
@@ -119,15 +119,15 @@ const Games = (props) => {
 
                         <div className="popular_games_list">
                             <div className="popular_games_list_element">
-                                <img src={numMoments[0].image} />
+                                <img src={numMoments[0].image} alt="number of moments for most popular game" />
                                 <h4>{numMoments[0].game}</h4>
                             </div>
                             <div className="popular_games_list_element">
-                                <img src={numMoments[1].image} />
+                                <img src={numMoments[1].image} alt="number of moments for second most popular game" />
                                 <h4>{numMoments[1].game}</h4>
                             </div>
                             <div className="popular_games_list_element">
-                                <img src={numMoments[2].image} />
+                                <img src={numMoments[2].image} alt="number of moments for third most popular game" />
                                 <h4>{numMoments[2].game}</h4>
                             </div>
                         </div>

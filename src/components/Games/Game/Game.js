@@ -31,19 +31,19 @@ const Game = (props) => {
         <div className="game">
             <div className="game_description">
                 {props.match.params.game === "League of Legends"
-                    ? <img src={leagueImage} />
+                    ? <img src={leagueImage} alt="league of legends" />
                     : props.match.params.game === "Rocket League"
-                        ? <img src={rocketleagueImage} />
+                        ? <img src={rocketleagueImage} alt="rocket league" />
                         : props.match.params.game === "Valorant"
-                            ? <img src={valorantImage} />
+                            ? <img src={valorantImage} alt="valorant" />
                             : props.match.params.game === "Minecraft"
-                                ? <img src={minecraftImage} />
+                                ? <img src={minecraftImage} alt="minecraft" />
                                 : props.match.params.game === "Fortnite"
-                                    ? <img src={fortniteImage} />
+                                    ? <img src={fortniteImage} alt="fortnite" />
                                     : props.match.params.game === "CSGO"
-                                        ? <img src={csgoImage} />
+                                        ? <img src={csgoImage} alt="csgo" />
                                         : props.match.params.game === "Apex Legends"
-                                            ? <img src={apexImage} />
+                                            ? <img src={apexImage} alt="apex legends" />
                                             : null
 
                 }

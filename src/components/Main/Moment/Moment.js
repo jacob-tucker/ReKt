@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Moment.css'
 import { NavLink } from 'react-router-dom'
 
@@ -13,8 +13,7 @@ const Moment = (props) => {
                 <p className="moment_title">{props.video.title}</p>
 
                 <NavLink to={{
-                    pathname: '/profile',
-                    state: { address: props.video.author }
+                    pathname: `/profile/${props.video.author}`
                 }} ><p className="moment_author"><span style={{ color: 'white' }}>Author:</span> {props.video.author}</p></NavLink>
             </div>
         </div>
