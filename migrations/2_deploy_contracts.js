@@ -1,4 +1,4 @@
-// puts dvideo contract to the blockchain by doing "truffle migrate"
+// puts GamingMoments contract to the blockchain by doing "truffle migrate"
 
 const GameMoments = artifacts.require("GameMoments");
 
