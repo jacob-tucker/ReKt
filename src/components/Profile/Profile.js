@@ -5,6 +5,11 @@ import Moment from '../Main/Moment/Moment'
 
 import { connect } from 'react-redux'
 
+// Note: we get the address from the link. There are three steps to this.
+// 1. Make the path in App.js path="/profile/:address"
+// 2. Use NavLink wherever we click to go to the profile and pass in the address (look in Navbar NavLink)
+// 3. Access it with props.match.params.address
+
 const Profile = (props) => {
     const [videos, setVideos] = useState([])
     useEffect(() => {
@@ -12,7 +17,7 @@ const Profile = (props) => {
     }, [props])
 
     async function retrieveVideos() {
-        setVideos(await getVideos(props.location.state.address));
+        setVideos(await getVideos(props.match.params.address));
     }
 
     async function getVideos(address) {
@@ -24,7 +29,7 @@ const Profile = (props) => {
     return (
         <div className="main">
             <div className="main_video_list">
-                {videos.map((video, key) => {
+                {videos.slice(0).reverse().map((video, key) => {
                     if (video.title.includes(props.searchVal) || props.searchVal === '') {
                         return (
                             <Moment key={key} video={video} />
@@ -34,8 +39,8 @@ const Profile = (props) => {
             </div>
 
             <div className="profile_info">
-                <img src={`data:image/png;base64,${new Identicon(props.location.state.address, 100).toString()}`} alt="Profile icon" />
-                <h4>{props.location.state.address}</h4>
+                <img src={`data:image/png;base64,${new Identicon(props.match.params.address, 100).toString()}`} alt="Profile icon" />
+                <h4>{props.match.params.address}</h4>
                 <div>
                     <p>Clips: {videos.length}</p>
                 </div>

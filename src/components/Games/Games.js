@@ -24,7 +24,7 @@ const Games = (props) => {
         arrayOfNumMoments.push({ game: "Valorant", image: valorantImage, number: await getNumbers("Valorant") });
         arrayOfNumMoments.push({ game: "Minecraft", image: minecraftImage, number: await getNumbers("Minecraft") });
         arrayOfNumMoments.push({ game: "Fortnite", image: fortniteImage, number: await getNumbers("Fortnite") });
-        arrayOfNumMoments.push({ game: "CSGO", csgoImage, number: await getNumbers("CSGO") });
+        arrayOfNumMoments.push({ game: "CSGO", image: csgoImage, number: await getNumbers("CSGO") });
         arrayOfNumMoments.push({ game: "Apex Legends", image: apexImage, number: await getNumbers("Apex Legends") });
         arrayOfNumMoments.sort(function (a, b) { return b.number - a.number })
         setNumMoments(arrayOfNumMoments);
@@ -46,8 +46,7 @@ const Games = (props) => {
                             <p>{numMoments[0].number} Moments</p>
                             <Link
                                 to={{
-                                    pathname: "/games/league-of-legends",
-                                    state: { game: "League of Legends", image: leagueImage, number: numMoments[0].number }
+                                    pathname: "/games/League of Legends"
                                 }}
                             >Explore</Link>
                         </div>
@@ -55,37 +54,61 @@ const Games = (props) => {
                             <img src={rocketleagueImage} alt="rocketleague_wallpaper" />
                             <p>Rocket League</p>
                             <p>{numMoments[1].number} Moments</p>
-                            <Link>Explore</Link>
+                            <Link
+                                to={{
+                                    pathname: "/games/Rocket League"
+                                }}
+                            >Explore</Link>
                         </div>
                         <div className="game_element">
                             <img src={valorantImage} alt="valorant_wallpaper" />
                             <p>Valorant</p>
                             <p>{numMoments[2].number} Moments</p>
-                            <Link>Explore</Link>
+                            <Link
+                                to={{
+                                    pathname: "/games/Valorant"
+                                }}
+                            >Explore</Link>
                         </div>
                         <div className="game_element">
                             <img src={minecraftImage} alt="minecraft_wallpaper" />
                             <p>Minecraft</p>
                             <p>{numMoments[3].number} Moments</p>
-                            <Link>Explore</Link>
+                            <Link
+                                to={{
+                                    pathname: "/games/Minecraft"
+                                }}
+                            >Explore</Link>
                         </div>
                         <div className="game_element">
                             <img src={fortniteImage} alt="fortnite_wallpaper" />
                             <p>Fortnite</p>
                             <p>{numMoments[4].number} Moments</p>
-                            <Link>Explore</Link>
+                            <Link
+                                to={{
+                                    pathname: "/games/Fortnite"
+                                }}
+                            >Explore</Link>
                         </div>
                         <div className="game_element">
                             <img src={csgoImage} alt="csgo_wallpaper" />
                             <p>CSGO</p>
                             <p>{numMoments[5].number} Moments</p>
-                            <Link>Explore</Link>
+                            <Link
+                                to={{
+                                    pathname: "/games/CSGO"
+                                }}
+                            >Explore</Link>
                         </div>
                         <div className="game_element">
                             <img src={apexImage} alt="apex_wallpaper" />
                             <p>Apex Legends</p>
                             <p>{numMoments[6].number} Moments</p>
-                            <Link>Explore</Link>
+                            <Link
+                                to={{
+                                    pathname: "/games/Apex Legends"
+                                }}
+                            >Explore</Link>
                         </div>
                         <div className="game_element">
 

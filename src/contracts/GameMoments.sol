@@ -15,7 +15,7 @@ contract GameMoments {
     uint256 public videoCount = 0;
     //"public" means can access outside of the smart contract
     // you can get this value by doing "truffle console", doing dVideo = await DVideo.deployed(), then doing name = await dVideo.name(), and typing name
-    string public name = "DVideo";
+    string public name = "ReKt";
     mapping(uint256 => Video) public videos;
 
     // map a person's address to all the videos they have

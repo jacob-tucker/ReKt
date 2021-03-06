@@ -129,10 +129,10 @@ const App = () => {
           <Route exact path="/games"
             render={(routeProps) => <Games {...routeProps} contract={gameMoments} />}>
           </Route>
-          <Route path="/games/"
+          <Route path="/games/:game"
             render={(routeProps) => <Game {...routeProps} captureFile={captureFile} uploadVideo={uploadVideo} contract={gameMoments} />}>
           </Route>
-          <Route path="/profile"
+          <Route path="/profile/:address"
             render={(routeProps) => <Profile {...routeProps} contract={gameMoments} />}>
           </Route>
         </Switch>
