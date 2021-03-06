@@ -20,7 +20,7 @@ const Main = (props) => {
     <div className="main">
       <div className="main_video_list">
         {props.videos.map((video, key) => {
-          if (video.title.includes(props.searchVal) || props.searchVal === '') {
+          if (props.searchVal === '' || video.title.toUpperCase().includes(props.searchVal.toUpperCase())) {
             return (
               <Moment key={key} video={video} />
             )
