@@ -1,6 +1,9 @@
 require('dotenv').config();
 const HDWalletProvider = require('truffle-hdwallet-provider');
 
+// Address deploying the contract (keep funding it): 0x99bdB315AE820243FBe65b49cbffB5Fb028993Aa
+// The mneonomic is for this account ^
+
 module.exports = {
   networks: {
     development: {
