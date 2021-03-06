@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './Game.css'
 import Main from '../../Main/Main';
-import leagueImage from '../../../Resources/league_wallpaper.jpg';
-import rocketleagueImage from '../../../Resources/rocketleague_wallpaper.jpg'
-import valorantImage from '../../../Resources/valorant_wallpaper.jpg'
-import minecraftImage from '../../../Resources/minecraft_wallpaper.png'
-import fortniteImage from '../../../Resources/fortnite_wallpaper.jpg'
-import csgoImage from '../../../Resources/csgo_wallpaper.png'
-import apexImage from '../../../Resources/apex_wallpaper.jpg'
+import leagueImage2 from '../../../Resources/league_wallpaper.jpg';
+import rocketleagueImage2 from '../../../Resources/rocketleague_wallpaper.jpg'
+import valorantImage2 from '../../../Resources/valorant_wallpaper.jpg'
+import minecraftImage2 from '../../../Resources/minecraft_wallpaper.png'
+import fortniteImage2 from '../../../Resources/fortnite_wallpaper.jpg'
+import csgoImage2 from '../../../Resources/csgo_wallpaper.png'
+import apexImage2 from '../../../Resources/apex_wallpaper.jpg'
 
 const Game = (props) => {
     const [videos, setVideos] = useState([])
@@ -29,22 +29,21 @@ const Game = (props) => {
 
     return (
         <div className="game">
-            <img src={leagueImage} alt="leaguers" />
             <div className="game_description">
                 {props.match.params.game === "League of Legends"
-                    ? <img src={require('../../../Resources/league_wallpaper.jpg')} alt="league of legends" />
+                    ? <img src={leagueImage2} alt="league of legends" />
                     : props.match.params.game === "Rocket League"
-                        ? <img src={rocketleagueImage} alt="rocket league" />
+                        ? <img src={rocketleagueImage2} alt="rocket league" />
                         : props.match.params.game === "Valorant"
-                            ? <img src={valorantImage} alt="valorant" />
+                            ? <img src={valorantImage2} alt="valorant" />
                             : props.match.params.game === "Minecraft"
-                                ? <img src={minecraftImage} alt="minecraft" />
+                                ? <img src={minecraftImage2} alt="minecraft" />
                                 : props.match.params.game === "Fortnite"
-                                    ? <img src={fortniteImage} alt="fortnite" />
+                                    ? <img src={fortniteImage2} alt="fortnite" />
                                     : props.match.params.game === "CSGO"
-                                        ? <img src={csgoImage} alt="csgo" />
+                                        ? <img src={csgoImage2} alt="csgo" />
                                         : props.match.params.game === "Apex Legends"
-                                            ? <img src={apexImage} alt="apex legends" />
+                                            ? <img src={apexImage2} alt="apex legends" />
                                             : null
 
                 }
