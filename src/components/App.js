@@ -7,7 +7,7 @@ import Game from './Games/Game/Game'
 import Profile from './Profile/Profile'
 import Web3 from 'web3';
 import './App.css';
-import { Router, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 export const appHistory = createBrowserHistory()
 
@@ -116,7 +116,7 @@ const App = () => {
   }
 
   return (
-    <Router history={appHistory}>
+    <BrowserRouter history={appHistory}>
       <Navbar account={account} />
       <img id="background-image" src="https://cdn.medal.tv/assets/img/desktop-background.png" alt="background" />
       { loading
@@ -138,7 +138,7 @@ const App = () => {
         </Switch>
       }
 
-    </Router>
+    </BrowserRouter>
   );
 
 }
