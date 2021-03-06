@@ -1,6 +1,8 @@
 // to update smart contract code, do "truffle migrate --reset"
 // * NEED Ganache OPEN * //
 
+// * truffle migrate --reset --network ropsten-infura * //
+
 pragma solidity ^0.5.0;
 pragma experimental ABIEncoderV2;
 
@@ -90,6 +92,11 @@ contract GameMoments {
     }
 
     function returnVideosForAddress() public view returns (Video[] memory) {
+        // Note about msg.sender: you have to specify it using the from parameter in web3.
+        // When you write "from" in a .call (which is a view method), you can make it
+        // "from" whoever you want, it doesn't actually have to be you. In a normal
+        // TRANSACTION though where you write data, the from must be you obviously,
+        // or else you'd be able to modify the contract using someone else's address.
         return account_videos[msg.sender];
     }
 }

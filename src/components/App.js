@@ -4,6 +4,7 @@ import Navbar from './Navbar/Navbar'
 import Main from './Main/Main'
 import Games from './Games/Games'
 import Game from './Games/Game/Game'
+import Profile from './Profile/Profile'
 import Web3 from 'web3';
 import './App.css';
 import { Router, Switch, Route } from 'react-router-dom'
@@ -117,6 +118,7 @@ const App = () => {
   return (
     <Router history={appHistory}>
       <Navbar account={account} />
+      <img id="background-image" src="https://cdn.medal.tv/assets/img/desktop-background.png" />
       { loading
         ? <div id="loader"><p>Loading...</p></div>
         :
@@ -129,6 +131,9 @@ const App = () => {
           </Route>
           <Route path="/games/"
             render={(routeProps) => <Game {...routeProps} captureFile={captureFile} uploadVideo={uploadVideo} contract={gameMoments} />}>
+          </Route>
+          <Route path="/profile"
+            render={(routeProps) => <Profile {...routeProps} contract={gameMoments} />}>
           </Route>
         </Switch>
       }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Moment.css'
+import { NavLink } from 'react-router-dom'
 
 const Moment = (props) => {
 
@@ -11,7 +12,10 @@ const Moment = (props) => {
                 <p className="moment_game">{props.video.game}</p>
                 <p className="moment_title">{props.video.title}</p>
 
-                <p className="moment_author"><span style={{ color: 'white' }}>Author:</span> {props.video.author}</p>
+                <NavLink to={{
+                    pathname: '/profile',
+                    state: { address: props.video.author }
+                }} ><p className="moment_author"><span style={{ color: 'white' }}>Author:</span> {props.video.author}</p></NavLink>
             </div>
         </div>
     );

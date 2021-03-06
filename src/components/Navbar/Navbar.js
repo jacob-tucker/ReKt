@@ -53,10 +53,13 @@ const Navbar = (props) => {
         </li>
         <li>
           {props.account
-            ? <img
-              src={`data:image/png;base64,${new Identicon(props.account, 30).toString()}`}
-              alt="Profile icon"
-            />
+            ? <NavLink to={{
+              pathname: '/profile',
+              state: { address: props.account }
+            }} ><img
+                src={`data:image/png;base64,${new Identicon(props.account, 30).toString()}`}
+                alt="Profile icon"
+              /></NavLink>
             : <span></span>
           }
         </li>

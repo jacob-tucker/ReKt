@@ -20,7 +20,7 @@ const Main = (props) => {
     <div className="main">
       <div className="main_video_list">
         {props.videos.map((video, key) => {
-          if (video.title === props.searchVal || props.searchVal === '') {
+          if (video.title.includes(props.searchVal) || props.searchVal === '') {
             return (
               <Moment key={key} video={video} />
             )

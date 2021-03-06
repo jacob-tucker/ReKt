@@ -50,13 +50,11 @@ body::-webkit-scrollbar-thumb {
           transform: scale(3);
 }
 
-#loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  color: white;
-  font-size: 50px;
-  font-family: sans-serif;
+#background-image {
+  position: fixed;
+  width: 75%;
+  right: 0px;
+  top: 0px;
+  opacity: .8;
 }
 /*# sourceMappingURL=App.css.map */

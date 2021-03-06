@@ -21,6 +21,7 @@
             height: 311px;
         }
         @media all and (max-width: 1000px) {
+            top: 200px;
             position: relative;
             width: 600px;
         }
@@ -78,6 +79,10 @@
         top: 175px;
         left: 0;
         width: 100%;
+
+        @media all and (max-width: 1000px) {
+            top: 225px;
+        }
     
         .upload_video {
             top: 350px;

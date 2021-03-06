@@ -36,6 +36,7 @@
 
 @media all and (max-width: 1000px) {
   .game .game_description {
+    top: 200px;
     position: relative;
     width: 600px;
   }
@@ -107,6 +108,12 @@
   top: 175px;
   left: 0;
   width: 100%;
+}
+
+@media all and (max-width: 1000px) {
+  .game .gamepage_list {
+    top: 225px;
+  }
 }
 
 .game .gamepage_list .upload_video {
