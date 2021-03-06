@@ -57,15 +57,4 @@ body::-webkit-scrollbar-thumb {
   top: 0px;
   opacity: .8;
 }
-
-#loader {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  font-size: 40px;
-  font-family: sans-serif;
-  color: white;
-}
-
 /*# sourceMappingURL=App.css.map */

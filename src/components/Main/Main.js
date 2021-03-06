@@ -44,7 +44,7 @@ const Main = (props) => {
             </div>
             <div className="step">
               <p>2) </p>
-              <input type="text" placeholder="Title..." onChange={(input) => setVideoTitle(input.target.value)} required></input>
+              <input id="videoTitleId" type="text" placeholder="Title..." onChange={(input) => setVideoTitle(input.target.value)} required></input>
             </div>
             <div className="step">
               <p>3) </p>

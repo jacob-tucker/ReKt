@@ -146,12 +146,11 @@
   display: flex;
 }
 
-.main .upload_video .middleSection .step input[type="text"] {
+.main .upload_video .middleSection .step #videoTitleId {
   width: 200px;
   height: 40px;
   border: .5px solid grey;
   background: #222222;
-  border-color: -internal-light-dark(#767676, #858585);
   outline: 0;
   color: white;
   font-size: 12px;
@@ -159,7 +158,7 @@
   padding: 10px;
 }
 
-.main .upload_video .middleSection .step input[type="text"]:focus {
+.main .upload_video .middleSection .step #videoTitleId:focus {
   border-color: #E30004;
 }
 
