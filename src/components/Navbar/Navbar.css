@@ -17,7 +17,7 @@
   width: 100%;
 }
 
-@media all and (max-width: 890px) {
+@media all and (max-width: 910px) {
   .navbar {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
@@ -45,7 +45,7 @@
   display: flex;
 }
 
-@media all and (max-width: 890px) {
+@media all and (max-width: 910px) {
   .navbar .navbar_leftside .flexIt {
     margin-bottom: 10px;
   }
@@ -79,13 +79,13 @@
   border-color: #E30004;
 }
 
-@media all and (max-width: 890px) {
+@media all and (max-width: 910px) {
   .navbar .navbar_leftside input {
     margin-bottom: 10px;
   }
 }
 
-@media all and (max-width: 890px) {
+@media all and (max-width: 910px) {
   .navbar .navbar_leftside {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;

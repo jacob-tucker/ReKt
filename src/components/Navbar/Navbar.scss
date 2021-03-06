@@ -10,7 +10,7 @@
     z-index: 10;
     width: 100%;
 
-    @media all and (max-width: 890px) {
+    @media all and (max-width: 910px) {
         justify-content: center;
         height: 175px;
     }
@@ -26,7 +26,7 @@
         .flexIt {
             display: flex;
 
-            @media all and (max-width: 890px) {
+            @media all and (max-width: 910px) {
                 margin-bottom: 10px;
             }
         }
@@ -53,12 +53,12 @@
             &:focus {
                 border-color: #E30004;
             }
-            @media all and (max-width: 890px) {
+            @media all and (max-width: 910px) {
                 margin-bottom: 10px;
             }
         }
 
-        @media all and (max-width: 890px) {
+        @media all and (max-width: 910px) {
             flex-direction: column;
             margin-left: 0%;
         }

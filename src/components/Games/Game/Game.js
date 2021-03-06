@@ -29,6 +29,7 @@ const Game = (props) => {
 
     return (
         <div className="game">
+            <img src={leagueImage} alt="leaguers" />
             <div className="game_description">
                 {props.match.params.game === "League of Legends"
                     ? <img src={require('../../../Resources/league_wallpaper.jpg')} alt="league of legends" />
