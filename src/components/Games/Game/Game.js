@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import './Game.css'
 import Main from '../../Main/Main';
-import leagueImage from '../league_wallpaper.jpg';
-import rocketleagueImage from '../rocketleague_wallpaper.jpg';
-import valorantImage from '../valorant_wallpaper.jpg';
-import minecraftImage from '../minecraft_wallpaper.png';
-import fortniteImage from '../fortnite_wallpaper.jpg';
-import csgoImage from '../csgo_wallpaper.png';
-import apexImage from '../apex_wallpaper.jpg';
+import leagueImage from '../../../Resources/league_wallpaper.jpg';
+import rocketleagueImage from '../../../Resources/rocketleague_wallpaper.jpg'
+import valorantImage from '../../../Resources/valorant_wallpaper.jpg'
+import minecraftImage from '../../../Resources/minecraft_wallpaper.png'
+import fortniteImage from '../../../Resources/fortnite_wallpaper.jpg'
+import csgoImage from '../../../Resources/csgo_wallpaper.png'
+import apexImage from '../../../Resources/apex_wallpaper.jpg'
 
 const Game = (props) => {
     const [videos, setVideos] = useState([])
