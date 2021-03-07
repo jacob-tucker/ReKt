@@ -57,6 +57,7 @@ const Main = (props) => {
                 <option value="CSGO">CSGO</option>
                 <option value="Fortnite">Fortnite</option>
                 <option value="Apex Legends">Apex Legends</option>
+                <option value="Overwatch">Overwatch</option>
               </select>
             </div>
             <div className="step">

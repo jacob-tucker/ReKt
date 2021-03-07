@@ -8,6 +8,7 @@ import minecraftImage2 from '../../../Resources/minecraft_wallpaper.png'
 import fortniteImage2 from '../../../Resources/fortnite_wallpaper.jpg'
 import csgoImage2 from '../../../Resources/csgo_wallpaper.png'
 import apexImage2 from '../../../Resources/apex_wallpaper.jpg'
+import overwatchImage2 from '../../../Resources/overwatch_wallpaper.jpg'
 
 const Game = (props) => {
     const [videos, setVideos] = useState([])
@@ -44,7 +45,9 @@ const Game = (props) => {
                                         ? <img src={csgoImage2} alt="csgo" />
                                         : props.match.params.game === "Apex Legends"
                                             ? <img src={apexImage2} alt="apex legends" />
-                                            : null
+                                            : props.match.params.game === "Overwatch"
+                                                ? <img src={overwatchImage2} alt="overwatch" />
+                                                : null
 
                 }
                 <div className="game_description_left">
@@ -66,7 +69,9 @@ const Game = (props) => {
                                             ? <p>Counter-Strike: Global Offensive (CS: GO) expands upon the team-based action gameplay that it pioneered when it was launched 19 years ago. CS: GO features new maps, characters, weapons, and game modes, and delivers updated versions of the classic CS content (de_dust2, etc.).</p>
                                             : props.match.params.game === "Apex Legends"
                                                 ? <p>Show ‘em what you’re made of in Apex Legends, a free-to-play Battle Royale game where contenders from across the Frontier team up to battle for glory, fame, and fortune.</p>
-                                                : null
+                                                : props.match.params.game === "Overwatch"
+                                                    ? <p>Overwatch is a colorful team-based shooter game starring a diverse cast of powerful heroes. Travel the world, build a team, and contest objectives in exhilarating 6v6 combat.</p>
+                                                    : null
 
                     }
                 </div>

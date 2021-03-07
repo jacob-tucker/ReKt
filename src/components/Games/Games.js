@@ -9,6 +9,7 @@ import minecraftImage from '../../Resources/minecraft_wallpaper.png'
 import fortniteImage from '../../Resources/fortnite_wallpaper.jpg'
 import csgoImage from '../../Resources/csgo_wallpaper.png'
 import apexImage from '../../Resources/apex_wallpaper.jpg'
+import overwatchImage from '../../Resources/overwatch_wallpaper.jpg'
 
 const Games = (props) => {
     const [numMoments, setNumMoments] = useState(null)
@@ -26,6 +27,7 @@ const Games = (props) => {
         arrayOfNumMoments.push({ game: "Fortnite", image: fortniteImage, number: await getNumbers("Fortnite") });
         arrayOfNumMoments.push({ game: "CSGO", image: csgoImage, number: await getNumbers("CSGO") });
         arrayOfNumMoments.push({ game: "Apex Legends", image: apexImage, number: await getNumbers("Apex Legends") });
+        arrayOfNumMoments.push({ game: "Overwatch", image: overwatchImage, number: await getNumbers("Overwatch") });
         arrayOfNumMoments.sort(function (a, b) { return b.number - a.number })
         setNumMoments(arrayOfNumMoments);
     }
@@ -111,7 +113,14 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-
+                            <img src={overwatchImage} alt="overwatch_wallpaper" />
+                            <p>Overwatch</p>
+                            <p>{numMoments[7].number} Moments</p>
+                            <Link
+                                to={{
+                                    pathname: "/games/Overwatch"
+                                }}
+                            >Explore</Link>
                         </div>
                     </div>
                     <div className="popular_games">
