@@ -10,6 +10,7 @@ import './App.css';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { createBrowserHistory } from 'history';
 export const appHistory = createBrowserHistory()
+const classNames = require('classnames')
 
 //Declare IPFS
 const ipfsClient = require('ipfs-http-client')
@@ -21,6 +22,11 @@ const App = () => {
   const [gameMoments, setGameMoments] = useState(null);
   const [buffer, setBuffer] = useState(null);
   const [videos, setVideos] = useState([]);
+  const [hashTx, setHashTx] = useState(null)
+  const [receiptSucceed, setReceiptSucceed] = useState(false)
+  const [receiptFail, setReceiptFail] = useState(false)
+  const [receiptPending, setReceiptPending] = useState(false)
+  const [error, setError] = useState("")
 
   useEffect(() => {
     async function thisAsyncFunction() {
@@ -109,35 +115,67 @@ const App = () => {
       // Put on blockchain and save to smart contract...
 
       setLoading(true)
-      gameMoments.methods.uploadVideo(result[0].hash, title, game).send({ from: account }).on('transactionHash', (hash) => { // Send is needed to "write" data to the blockchain (send a transaction)
-        setLoading(false)
-      })
+      gameMoments.methods.uploadVideo(result[0].hash, title, game).send({ from: account })
+        .on('transactionHash', (hash) => { // Send is needed to "write" data to the blockchain (send a transaction)
+          setLoading(false);
+          setReceiptPending(true);
+          console.log(hash)
+          setHashTx(hash)
+        })
+        .on('confirmation', (confirmationNumber, receipt) => {
+          console.log({ confirmationNumber, receipt })
+        })
+        .on('receipt', (receipt) => {
+          console.log(receipt)
+          setReceiptSucceed(true)
+        })
+        .on('error', (error, receipt) => {
+          console.log({ error, receipt })
+          setError(error)
+          setReceiptFail(true)
+        })
     })
   }
 
   return (
     <BrowserRouter history={appHistory}>
-      <Navbar account={account} />
-      <img id="background-image" src="https://cdn.medal.tv/assets/img/desktop-background.png" alt="background" />
-      { loading
-        ? <div id="loader"><p>Loading...</p></div>
-        :
-        <Switch>
-          <Route exact path="/"
-            render={(routeProps) => <Main {...routeProps} captureFile={captureFile} uploadVideo={uploadVideo} videos={videos} />}>
-          </Route>
-          <Route exact path="/games"
-            render={(routeProps) => <Games {...routeProps} contract={gameMoments} />}>
-          </Route>
-          <Route path="/games/:game"
-            render={(routeProps) => <Game {...routeProps} captureFile={captureFile} uploadVideo={uploadVideo} contract={gameMoments} />}>
-          </Route>
-          <Route path="/profile/:address"
-            render={(routeProps) => <Profile {...routeProps} contract={gameMoments} />}>
-          </Route>
-        </Switch>
-      }
-
+      <div className={classNames({ "blurMe": receiptSucceed || receiptFail || receiptPending, "mainDiv": true })}>
+        <Navbar account={account} />
+        <img id="background-image" src="https://cdn.medal.tv/assets/img/desktop-background.png" alt="background" />
+        <div className={classNames({ "transaction-receipt": receiptPending, "dont-display": true })}>
+          <p>Transaction Recepit: <span style={{ color: "purple" }}>Transaction Pending</span></p>
+          <p>Transaction Hash: <span style={{ color: "purple" }}>{hashTx}</span></p>
+          <p>Your transaction is currently pending.</p>
+        </div>
+        <div className={classNames({ "transaction-receipt": receiptSucceed, "dont-display": true })}>
+          <p>Transaction Recepit: <span style={{ color: "green" }}>Transaction Succeeded</span></p>
+          <p>Transaction Hash: <span style={{ color: "purple" }}>{hashTx}</span></p>
+          <p>Congradulations! Please wait a few minutes for your video to appear.</p>
+        </div>
+        <div className={classNames({ "transaction-receipt": receiptFail, "dont-display": true })}>
+          <h2>Transaction Recepit: <span style={{ color: "red" }}>Transaction Failed</span></h2>
+          <p>Transaction Hash: <span style={{ color: "purple" }}>{hashTx}</span></p>
+          <p style={{ fontSize: "8px" }}>Transaction Error: {error}</p>
+        </div>
+        {loading
+          ? <div id="loader"><p>Loading...</p></div>
+          :
+          <Switch>
+            <Route exact path="/"
+              render={(routeProps) => <Main {...routeProps} captureFile={captureFile} uploadVideo={uploadVideo} videos={videos} />}>
+            </Route>
+            <Route exact path="/games"
+              render={(routeProps) => <Games {...routeProps} contract={gameMoments} />}>
+            </Route>
+            <Route path="/games/:game"
+              render={(routeProps) => <Game {...routeProps} captureFile={captureFile} uploadVideo={uploadVideo} contract={gameMoments} />}>
+            </Route>
+            <Route path="/profile/:address"
+              render={(routeProps) => <Profile {...routeProps} contract={gameMoments} />}>
+            </Route>
+          </Switch>
+        }
+      </div>
     </BrowserRouter>
   );
 

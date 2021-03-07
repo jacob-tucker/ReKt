@@ -68,4 +68,109 @@ body::-webkit-scrollbar-thumb {
   color: white;
   font-family: sans-serif;
 }
+
+.dont-display {
+  display: none;
+}
+
+.blurMe > *:not(.transaction-receipt) {
+  -webkit-animation: blurFor5 5s forwards;
+          animation: blurFor5 5s forwards;
+  opacity: .2;
+}
+
+@-webkit-keyframes blurFor5 {
+  0% {
+    opacity: .5;
+  }
+  80% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes blurFor5 {
+  0% {
+    opacity: .5;
+  }
+  80% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.mainDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.transaction-receipt {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+          transform: translateX(-50%) translateY(-50%);
+  width: 400px;
+  height: 200px;
+  background: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  z-index: 5;
+  text-align: center;
+  opacity: 1;
+  border-radius: 2px;
+  -webkit-animation: unblurFor5 5s forwards;
+          animation: unblurFor5 5s forwards;
+}
+
+.transaction-receipt p {
+  font-family: sans-serif;
+}
+
+.transaction-receipt p:nth-child(2) {
+  font-size: 10px;
+}
+
+.transaction-receipt p:nth-child(3) {
+  color: grey;
+}
+
+@-webkit-keyframes unblurFor5 {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes unblurFor5 {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /*# sourceMappingURL=App.css.map */
