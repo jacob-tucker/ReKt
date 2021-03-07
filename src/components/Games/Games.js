@@ -13,6 +13,7 @@ import overwatchImage from '../../Resources/overwatch_wallpaper.jpg'
 
 const Games = (props) => {
     const [numMoments, setNumMoments] = useState(null)
+    const [numMomentsSorted, setNumMomentsSorted] = useState(null)
 
     useEffect(() => {
         if (props.contract) retrieveNumbers();
@@ -20,6 +21,7 @@ const Games = (props) => {
 
     async function retrieveNumbers() {
         let arrayOfNumMoments = [];
+        let arrayOfNumMomentsSorted = [];
         arrayOfNumMoments.push({ game: "League of Legends", image: leagueImage, number: await getNumbers("League of Legends") });
         arrayOfNumMoments.push({ game: "Rocket League", image: rocketleagueImage, number: await getNumbers("Rocket League") });
         arrayOfNumMoments.push({ game: "Valorant", image: valorantImage, number: await getNumbers("Valorant") });
@@ -28,8 +30,10 @@ const Games = (props) => {
         arrayOfNumMoments.push({ game: "CSGO", image: csgoImage, number: await getNumbers("CSGO") });
         arrayOfNumMoments.push({ game: "Apex Legends", image: apexImage, number: await getNumbers("Apex Legends") });
         arrayOfNumMoments.push({ game: "Overwatch", image: overwatchImage, number: await getNumbers("Overwatch") });
-        arrayOfNumMoments.sort(function (a, b) { return b.number - a.number })
+        arrayOfNumMomentsSorted = arrayOfNumMoments.slice();
+        arrayOfNumMomentsSorted.sort(function (a, b) { return b.number - a.number })
         setNumMoments(arrayOfNumMoments);
+        setNumMomentsSorted(arrayOfNumMomentsSorted)
     }
 
     async function getNumbers(game) {
@@ -39,11 +43,11 @@ const Games = (props) => {
 
     return (
         <div>
-            {numMoments ?
+            {numMoments && numMomentsSorted ?
                 <div className="games">
                     <div className="games_list">
                         <div className="game_element">
-                            <img src={leagueImage} alt="league_wallpaper" />
+                            <div><img src={leagueImage} alt="league_wallpaper" /></div>
                             <p>League of Legends</p>
                             <p>{numMoments[0].number} Moments</p>
                             <Link
@@ -53,7 +57,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={rocketleagueImage} alt="rocketleague_wallpaper" />
+                            <div><img src={rocketleagueImage} alt="rocketleague_wallpaper" /></div>
                             <p>Rocket League</p>
                             <p>{numMoments[1].number} Moments</p>
                             <Link
@@ -63,7 +67,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={valorantImage} alt="valorant_wallpaper" />
+                            <div><img src={valorantImage} alt="valorant_wallpaper" /></div>
                             <p>Valorant</p>
                             <p>{numMoments[2].number} Moments</p>
                             <Link
@@ -73,7 +77,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={minecraftImage} alt="minecraft_wallpaper" />
+                            <div><img src={minecraftImage} alt="minecraft_wallpaper" /></div>
                             <p>Minecraft</p>
                             <p>{numMoments[3].number} Moments</p>
                             <Link
@@ -83,7 +87,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={fortniteImage} alt="fortnite_wallpaper" />
+                            <div><img src={fortniteImage} alt="fortnite_wallpaper" /></div>
                             <p>Fortnite</p>
                             <p>{numMoments[4].number} Moments</p>
                             <Link
@@ -93,7 +97,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={csgoImage} alt="csgo_wallpaper" />
+                            <div><img src={csgoImage} alt="csgo_wallpaper" /></div>
                             <p>CSGO</p>
                             <p>{numMoments[5].number} Moments</p>
                             <Link
@@ -103,7 +107,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={apexImage} alt="apex_wallpaper" />
+                            <div><img src={apexImage} alt="apex_wallpaper" /></div>
                             <p>Apex Legends</p>
                             <p>{numMoments[6].number} Moments</p>
                             <Link
@@ -113,7 +117,7 @@ const Games = (props) => {
                             >Explore</Link>
                         </div>
                         <div className="game_element">
-                            <img src={overwatchImage} alt="overwatch_wallpaper" />
+                            <div><img src={overwatchImage} alt="overwatch_wallpaper" /></div>
                             <p>Overwatch</p>
                             <p>{numMoments[7].number} Moments</p>
                             <Link
@@ -128,16 +132,16 @@ const Games = (props) => {
 
                         <div className="popular_games_list">
                             <div className="popular_games_list_element">
-                                <img src={numMoments[0].image} alt="number of moments for most popular game" />
-                                <h4>{numMoments[0].game}</h4>
+                                <img src={numMomentsSorted[0].image} alt="number of moments for most popular game" />
+                                <h4>{numMomentsSorted[0].game}</h4>
                             </div>
                             <div className="popular_games_list_element">
-                                <img src={numMoments[1].image} alt="number of moments for second most popular game" />
-                                <h4>{numMoments[1].game}</h4>
+                                <img src={numMomentsSorted[1].image} alt="number of moments for second most popular game" />
+                                <h4>{numMomentsSorted[1].game}</h4>
                             </div>
                             <div className="popular_games_list_element">
-                                <img src={numMoments[2].image} alt="number of moments for third most popular game" />
-                                <h4>{numMoments[2].game}</h4>
+                                <img src={numMomentsSorted[2].image} alt="number of moments for third most popular game" />
+                                <h4>{numMomentsSorted[2].game}</h4>
                             </div>
                         </div>
                     </div>
