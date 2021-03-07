@@ -121,6 +121,10 @@ const App = () => {
           setReceiptPending(true);
           console.log(hash)
           setHashTx(hash)
+
+          setInterval(() => {
+            setReceiptPending(false)
+          }, 5000)
         })
         .on('confirmation', (confirmationNumber, receipt) => {
           console.log({ confirmationNumber, receipt })
@@ -128,11 +132,19 @@ const App = () => {
         .on('receipt', (receipt) => {
           console.log(receipt)
           setReceiptSucceed(true)
+
+          setInterval(() => {
+            setReceiptSucceed(false)
+          }, 5000)
         })
         .on('error', (error, receipt) => {
           console.log({ error, receipt })
           setError(error)
           setReceiptFail(true)
+
+          setInterval(() => {
+            setReceiptFail(false)
+          }, 5000)
         })
     })
   }
