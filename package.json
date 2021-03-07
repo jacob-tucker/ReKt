@@ -2,8 +2,8 @@
   "name": "ReKt",
   "version": "0.1.0",
   "description": "Decentralized platform for video publishing",
-  "author": "Dapp University",
-  "homepage": ".",
+  "author": "Jacob Tucker",
+  "homepage": "https://rekt.netlify.app",
   "dependencies": {
     "@truffle/hdwallet-provider": "^1.1.0",
     "babel-polyfill": "6.26.0",
