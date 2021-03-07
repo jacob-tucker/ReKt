@@ -27,7 +27,10 @@ const Profile = (props) => {
     }
 
     return (
-        <div className="main">
+        <div className="profile">
+            <div className="latest_underline">
+                <h4>Latest Clips</h4>
+            </div>
             <div className="main_video_list">
                 {videos.slice(0).reverse().map((video, key) => {
                     if (props.searchVal === '' || video.title.toUpperCase().includes(props.searchVal.toUpperCase())) {

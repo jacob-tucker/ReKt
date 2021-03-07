@@ -18,6 +18,9 @@ const Main = (props) => {
 
   return (
     <div className="main">
+      <div className="trending_underline">
+        <h4>Trending</h4>
+      </div>
       <div className="main_video_list">
         {props.videos.map((video, key) => {
           if (props.searchVal === '' || video.title.toUpperCase().includes(props.searchVal.toUpperCase())) {
