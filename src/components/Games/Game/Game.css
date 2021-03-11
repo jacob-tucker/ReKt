@@ -50,9 +50,12 @@
 }
 
 .game .game_description img {
+  position: relative;
   width: 160px;
   height: 213px;
   border-radius: 5px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .game .game_description .game_description_left {

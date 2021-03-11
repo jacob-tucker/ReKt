@@ -31,9 +31,11 @@
         }
 
         img {
+            position: relative;
             width: 160px;
             height: 213px;
             border-radius: 5px;
+            object-fit: cover;
         }
 
         .game_description_left {
