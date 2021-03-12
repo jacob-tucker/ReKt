@@ -107,7 +107,7 @@
   margin-right: 5%;
 }
 
-@media all and (max-width: 1275px) {
+@media all and (max-width: 1300px) {
   .navbar .navbar_rightside #accountAddress {
     display: none;
   }
